@@ -1,0 +1,171 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Menlo', monospace; /* Appliquer la police Menlo */
+    background-color: #f0f0f0; /* Fond clair */
+    color: #000; /* Texte en noir */
+    line-height: 1.6;
+}
+
+/* Style du header */
+header {
+    background-color: transparent;
+    padding: 2rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Disposer les éléments du header verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+}
+
+/* Conteneur principal du header */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Garder l'espacement entre le CV et le nom */
+    width: 100%;
+    align-items: center; /* Centrer les éléments verticalement */
+}
+
+/* Conteneur du lien vers le CV */
+.cv-link-container {
+    display: flex;
+    justify-content: flex-start; /* Aligner le CV à gauche */
+}
+
+/* Style de l'icône du CV */
+.cv-link .icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Conteneur du texte (nom et job) */
+.header-text {
+    text-align: center; /* Centrer le texte */
+    flex-grow: 1; /* Permet de prendre tout l'espace restant */
+}
+
+/* Style du titre et du sous-titre */
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Style de la navigation */
+nav {
+    margin-top: 1rem;
+    width: 100%; /* Navigation prend toute la largeur */
+    display: flex;
+    justify-content: flex-end; /* Justifier les onglets à droite */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les onglets */
+    list-style: none;
+    width: 50%; /* Limiter la largeur pour ne pas avoir trop d'espacement */
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0 1rem; /* Plus d'espace entre les onglets */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Conteneur du lien vers le CV */
+.cv-link-container {
+    margin-top: 1rem;
+}
+
+/* Style de l'icône du CV */
+.cv-link .icon {
+    width: 80px;
+    height: 80px;
+}
+
+section {
+    padding: 3rem 2rem;
+    width: 100%; /* Les sections prennent toute la largeur de la page */
+    background-color: transparent; /* Supprimer le fond blanc */
+    margin: 4rem auto;
+    display: flex;
+    justify-content: flex-start; /* Aligner à gauche */
+    align-items: flex-start; /* Aligner verticalement à gauche */
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem; /* Réduit l'espace sous les titres */
+    color: #000; /* Titres en noir */
+    text-align: left; /* Aligner le titre à gauche */
+    flex: 0 0 auto; /* Ne pas laisser le titre prendre toute la largeur */
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Contenu aligné à gauche */
+    max-width: 60%; /* Limiter la largeur du contenu pour éviter qu'il ne prenne trop de place */
+    margin-left: 2rem; /* Espacement à gauche entre le titre et le contenu */
+}
+
+ul, p {
+    margin-bottom: 1rem; /* Réduit l'espacement sous les éléments */
+}
+
+/* Réduction de l'espace sous les titres dans les sections Compétences, Portfolio et Contact */
+#skills h2, #portfolio h2, #contact h2 {
+    margin-bottom: 0.5rem; /* Ajuste la marge sous le titre pour ces sections */
+}
+
+/* Animations de défilement en douceur */
+html {
+    scroll-behavior: smooth;
+}
+
+footer {
+    background-color: #f0f0f0; /* Fond clair */
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
