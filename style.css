@@ -6,11 +6,39 @@
 }
 
 body {
-    font-family: 'Menlo', monospace; /* Appliquer la police Menlo */
-    background-color: #f0f0f0; /* Fond clair */
-    color: #000; /* Texte en noir */
+    font-family: 'Menlo', monospace;
+    background-color: #f0f0f0;
+    color: #000;
     line-height: 1.6;
 }
+
+
+@keyframes rainbow {
+    0% { color: #ffcc00; }
+    25% { color: #ff6600; }
+    50% { color: #9933ff; }
+    75% { color: #33cc99; }
+    100% { color: #ffcc00; }
+}
+
+.animated-text {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: rainbow 15s infinite;
+}
+
+.animated-text1 {
+    font-size: 5rem;
+    font-weight: bold;
+    animation: rainbow 15s infinite;
+}
+
+
+
+.header-text h1 {
+    color:#ffcc00;
+}
+
 
 /* Style du header */
 header {
@@ -18,41 +46,44 @@ header {
     padding: 2rem 1rem;
     width: 100%;
     display: flex;
-    flex-direction: column; /* Disposer les éléments du header verticalement */
-    align-items: center; /* Centrer les éléments horizontalement */
+    flex-direction: column;
+    align-items: center;
 }
+
 
 /* Conteneur principal du header */
 .header-content {
     display: flex;
-    justify-content: space-between; /* Garder l'espacement entre le CV et le nom */
+    justify-content: space-between;
     width: 100%;
-    align-items: center; /* Centrer les éléments verticalement */
+    align-items: center;
 }
 
 /* Conteneur du lien vers le CV */
 .cv-link-container {
     display: flex;
-    justify-content: flex-start; /* Aligner le CV à gauche */
+    justify-content: flex-start;
 }
 
 /* Style de l'icône du CV */
 .cv-link .icon {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Conteneur du texte (nom et job) */
 .header-text {
-    text-align: center; /* Centrer le texte */
-    flex-grow: 1; /* Permet de prendre tout l'espace restant */
+    text-align: center;
+    flex-grow: 1;
 }
 
 /* Style du titre et du sous-titre */
 header h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin: 0;
 }
+
+
 
 header p {
     font-size: 1.5rem;
@@ -62,78 +93,101 @@ header p {
 /* Style de la navigation */
 nav {
     margin-top: 1rem;
-    width: 100%; /* Navigation prend toute la largeur */
+    width: 100%;
     display: flex;
-    justify-content: flex-end; /* Justifier les onglets à droite */
+    justify-content: flex-end;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-between; /* Espacement égal entre les onglets */
+    justify-content: space-between;
     list-style: none;
-    width: 50%; /* Limiter la largeur pour ne pas avoir trop d'espacement */
+    width: 50%;
 }
 
 nav ul li {
     margin: 0;
-    padding: 0 1rem; /* Plus d'espace entre les onglets */
+    padding: 0 1rem;
 }
 
+/* Navigation - Effet rainbow */
 nav ul li a {
     text-decoration: none;
-    font-size: 1.2rem;
-    color: black;
-    transition: color 0.3s ease;
+    color: black; /* Couleur par défaut */
+    transition: color 0.5s ease-in-out; /* Transition douce */
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    animation: rainbow-hover 1s infinite; /* Animation rainbow */
 }
 
-/* Conteneur du lien vers le CV */
-.cv-link-container {
-    margin-top: 1rem;
+/* Définition de l'animation rainbow */
+@keyframes rainbow-hover {
+    0% {
+        color: red;
+    }
+    16% {
+        color: orange;
+    }
+    32% {
+        color: yellow;
+    }
+    48% {
+        color: green;
+    }
+    64% {
+        color: blue;
+    }
+    80% {
+        color: indigo;
+    }
+    100% {
+        color: violet;
+    }
 }
 
-/* Style de l'icône du CV */
-.cv-link .icon {
-    width: 80px;
-    height: 80px;
-}
 
+/* Styles des sections */
 section {
-    padding: 3rem 2rem;
-    width: 100%; /* Les sections prennent toute la largeur de la page */
-    background-color: transparent; /* Supprimer le fond blanc */
+    padding: 4rem 2rem;
+    width: 100%;
+    background-color: transparent;
     margin: 4rem auto;
     display: flex;
-    justify-content: flex-start; /* Aligner à gauche */
-    align-items: flex-start; /* Aligner verticalement à gauche */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 section h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem; /* Réduit l'espace sous les titres */
-    color: #000; /* Titres en noir */
-    text-align: left; /* Aligner le titre à gauche */
-    flex: 0 0 auto; /* Ne pas laisser le titre prendre toute la largeur */
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 section div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Contenu aligné à gauche */
-    max-width: 60%; /* Limiter la largeur du contenu pour éviter qu'il ne prenne trop de place */
-    margin-left: 2rem; /* Espacement à gauche entre le titre et le contenu */
+    width: 80%;
+    margin-left: 2rem;
 }
 
-ul, p {
-    margin-bottom: 1rem; /* Réduit l'espacement sous les éléments */
+ul {
+    list-style-type: none;
 }
 
-/* Réduction de l'espace sous les titres dans les sections Compétences, Portfolio et Contact */
-#skills h2, #portfolio h2, #contact h2 {
-    margin-bottom: 0.5rem; /* Ajuste la marge sous le titre pour ces sections */
+ul li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Spécifique aux sections */
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+#portfolio p {
+    font-size: 1.2rem;
 }
 
 /* Animations de défilement en douceur */
@@ -142,7 +196,7 @@ html {
 }
 
 footer {
-    background-color: #f0f0f0; /* Fond clair */
+    background-color: #f0f0f0;
     padding: 2rem 1rem;
     text-align: center;
     margin-top: 2rem;
@@ -151,7 +205,6 @@ footer {
 footer h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: black;
 }
 
 .social-links {
@@ -168,4 +221,188 @@ footer h2 {
 
 .icon:hover {
     transform: scale(1.2);
+}
+/* Section des compétences */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+    margin: 0 auto; /* Centre chaque li horizontalement */
+}
+
+#skills li {
+    background-color: white; /* Couleur jaune */
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px; /* Bords arrondis */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 1rem; /* Marge égale à gauche et à droite */
+
+}
+
+
+/* Effet de survol */
+#skills li:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Mise en forme responsive */
+@media screen and (max-width: 768px) {
+    #skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Section Parcours */
+#journey {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Conteneur des lignes du temps */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Styles des timelines */
+.timeline {
+    width: 45%;
+    background-color: transparent;
+    padding: 1rem;
+    border-left: 1.5px solid black; /* Ligne verticale jaune */
+    position: relative;
+}
+
+.timeline h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.timeline ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.timeline ul li {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.timeline ul li .date {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+   
+}
+
+.timeline ul li p {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol pour les éléments de la timeline */
+.timeline ul li:hover p {
+    transform: translateX(10px); /* Décalage vers la droite au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+}
+
+/* Mise en forme responsive */
+@media screen and (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .timeline {
+        width: 100%;
+        border-left: none;
+        border-top: 3px solid #ffcc00; /* Ligne horizontale jaune en mode mobile */
+    }
+    .timeline ul li {
+        padding-left: 0;
+    }
+}
+/* Section À propos */
+#about {
+    margin: 2rem 0;
+    padding: 1.5rem;
+}
+
+#about p {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 2px solid black ; /* Bordure jaune */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    width: 400%; /* Ajuste la largeur selon ton besoin */
+    max-width: 1350px; /* Limite la largeur */
+    margin: 0 auto; /* Centre le cadre horizontalement */
+}
+
+/* Effet de survol du paragraphe À propos */
+#about p:hover {
+    transform: translateX(10px); /* Décalage du texte vers la droite */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Style du bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: white;
+    color:black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.7;
+}
+
+/* Style pour le compteur de visites */
+#visit-count {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    font-size: 0.8rem; /* Taille de police réduite */
+    color: black; /* Texte en blanc */
+    padding: 5px 10px; /* Espacement */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style pour le timer de visites */
+#visit-time {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    font-size: 0.8rem; /* Taille de police réduite */
+    color: black; /* Texte en blanc */
+    padding: 5px 10px; /* Espacement */
+    border-radius: 5px; /* Coins arrondis */
 }
