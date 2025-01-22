@@ -388,19 +388,19 @@ footer h2 {
 /* Style pour le compteur de visites */
 #visit-count {
     position: fixed;
-    top: 8px;
-    right: 10px;
+    top: 12px;
+    right: 14px;
     font-size: 0.8rem; /* Taille de police réduite */
     color: black; /* Texte en blanc */
-    padding: 5px 10px; /* Espacement */
+    padding: 8px 13px; /* Espacement */
     border-radius: 5px; /* Coins arrondis */
 }
 
 /* Style pour le timer de visites */
 #visit-time {
     position: fixed;
-    top: 20px;
-    right: 10px;
+    top: 24px;
+    right: 14px;
     font-size: 0.8rem; /* Taille de police réduite */
     color: black; /* Texte en blanc */
     padding: 5px 10px; /* Espacement */
